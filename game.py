@@ -1,9 +1,11 @@
+import itertools
+
 import pygame
 import pytmx
 import pyscroll
 
 from rond_player import RondPlayer
-from constants import DIMENSIONS, TITRE
+from constants import DIMENSIONS, TITRE, MAP_FILENAME_LIST
 
 
 class Game:
@@ -12,30 +14,15 @@ class Game:
         self.screen = pygame.display.set_mode(DIMENSIONS)
         pygame.display.set_caption(TITRE)
 
-        #importer et génerer la map
-        tmx_data = pytmx.util_pygame.load_pygame('Labyrinthe.tmx') #remplire
-        map_data = pyscroll.TiledMapData(tmx_data)  # Permet de deplacer la carte dans la fenetre
-        map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())  # Rendu graphique en fonction de la taille de
-        map_layer.zoom = 1.5                                                                    # la fenetre avec get_size()
+        self.map_filenames_iter = itertools.cycle(MAP_FILENAME_LIST)
 
-        enter_lab = tmx_data.get_object_by_name("next_lab")
-        self.enter_lab_rect = pygame.Rect(enter_lab.x, enter_lab.y, enter_lab.width, enter_lab.height)
+        # Créer le joueur et initialiser les autres attributs, puis importer la map
+        self.player = RondPlayer(0, 0)
+        self.walls = None
+        self.group = None
+        self.enter_lab_rect = None
+        self.switch_lab(next(self.map_filenames_iter))
 
-        #Génerer le joueur et ça position
-        player_position = tmx_data.get_object_by_name('spawn_lab') #remplir
-        self.player = RondPlayer(player_position.x, player_position.y)
-
-        #définir et reperer collision
-
-        self.walls = [] #list
-
-        for object in tmx_data.objects:
-            if object.type == "collision": #reperer le classe 'collision'
-                self.walls.append(pygame.Rect(object.x, object.y, object.width, object.height))
-
-        # dessiner groupe de calces
-        self.group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=4)
-        self.group.add(self.player)
 
         # faire boujer jouer(l1) et animation(l2)
     def handel_input(self):
@@ -89,14 +76,14 @@ class Game:
         self.group.center(self.player.position)
         #verifier entre
         if self.player.feet.colliderect(self.enter_lab_rect):
-            self.switch_lab()
+            self.switch_lab(next(self.map_filenames_iter))
 
         #continuer pour les autres lab
 
         #verifier collision
         for sprite in self.group.sprites():
             if sprite.feet.collidelist(self.walls) > -1:
-                sprite.mouv_back()
+                sprite.move_back()
 
 
     def run(self):
@@ -113,5 +100,5 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-        clock.tick(60)
+        clock.tick(30)
         pygame.quit()

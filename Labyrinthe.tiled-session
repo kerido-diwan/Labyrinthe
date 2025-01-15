@@ -13,6 +13,20 @@
             "scaleInDock": 0.33,
             "scaleInEditor": 0.33
         },
+        "C:/Users/wowsm/Documents/arb_svd/RPG Nature Tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/wowsm/Documents/arb_svd/lab2.tmx": {
+            "scale": 0.31072916666666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 959.0345289976534,
+                "y": 960.6436473348978
+            }
+        },
+        "C:/Users/wowsm/Documents/arb_svd/lab2.tsx": {
+            "scaleInDock": 1
+        },
         "C:/Users/wowsm/PycharmProjects/Pygame_new_project/Tileset01.tsx": {
             "scaleInDock": 1
         },
@@ -31,11 +45,11 @@
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.25,
+            "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1104,
-                "y": 1162
+                "x": 882,
+                "y": 1231
             }
         },
         "Labyrinthe_map.tmx": {
@@ -50,15 +64,23 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "lab2.tmx": {
+        "lab2.orig.tmx": {
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 4,
-            "selectedLayer": 1,
+            "scale": 5.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1011.25,
-                "y": 660.375
+                "x": 464,
+                "y": 389.90909090909093
+            }
+        },
+        "lab2.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 391.81818181818187,
+                "y": 832.8181818181818
             }
         },
         "lab2.tsx": {
@@ -101,11 +123,12 @@
     ],
     "project": "Labyrinthe.tiled-project",
     "recentFiles": [
+        "lab2.tmx",
+        "C:/Users/wowsm/Documents/arb_svd/lab2.tmx",
         "map.tsx",
         "Labyrinthe.tmx",
         "RPG Nature Tileset.tsx",
         "lab2.tsx",
-        "lab2.tmx",
         "C:/Users/wowsm/PycharmProjects/Pygame_new_project/carte_pygame.tmx",
         "nature.tsx",
         "Labyrinthe_map.tmx",

@@ -10,9 +10,9 @@ class RondPlayer(pygame.sprite.Sprite):
         self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()
         self.position = [x, y]
-        self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
+        self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 5)
         self.old_position = self.position.copy() #garder la position
-        self.speed = 0.40  # vitesse du mouvement
+        self.speed = 0.20  # vitesse du mouvement
 
     def save_location(self):
         self.old_position = self.position.copy()
@@ -29,6 +29,11 @@ class RondPlayer(pygame.sprite.Sprite):
 
     def move_left(self):
         self.position[0] -= self.speed
+
+    def move_back(self):
+        self.position = self.old_position
+        self.rect.topleft = self.position
+        self.feet.midbottom = self.rect.midbottom
 
     def get_image(self, x, y):
         image = pygame.Surface(PLAYER_SKIN_DIMENSIONS)
