@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.1" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="8">
- <tileset firstgid="1" source="RPG Nature Tileset.tsx"/>
- <tileset firstgid="721" source="lab2.tsx"/>
+ <tileset firstgid="1" source="../assets/RPG Nature Tileset.tsx"/>
+ <tileset firstgid="721" source="../assets/lab2.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="120" height="120">
   <data encoding="csv">
 206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,206,167,168,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,

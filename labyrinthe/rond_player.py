@@ -1,11 +1,11 @@
 import pygame
 
-from constants import PLAYER_SKIN_DIMENSIONS
+from labyrinthe.constants import PLAYER_SKIN_DIMENSIONS
 
 class RondPlayer(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        self.sprite_sheet = pygame.image.load("red_circle.png")
+        self.sprite_sheet = pygame.image.load("assets/red_circle.png")
         self.image = self.get_image(0, 0)
         self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()

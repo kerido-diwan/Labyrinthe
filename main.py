@@ -1,7 +1,7 @@
 import  pygame
 
 
-from game import Game
+from labyrinthe.game import Game
 
 
 if __name__ == '__main__':

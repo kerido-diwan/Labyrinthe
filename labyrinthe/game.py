@@ -4,8 +4,8 @@ import pygame
 import pytmx
 import pyscroll
 
-from rond_player import RondPlayer
-from constants import DIMENSIONS, TITRE, MAP_FILENAME_LIST
+from labyrinthe.rond_player import RondPlayer
+from labyrinthe.constants import DIMENSIONS, TITRE, MAP_DIR, MAP_FILE_SUFFIX
 
 
 class Game:
@@ -14,7 +14,8 @@ class Game:
         self.screen = pygame.display.set_mode(DIMENSIONS)
         pygame.display.set_caption(TITRE)
 
-        self.map_filenames_iter = itertools.cycle(MAP_FILENAME_LIST)
+        map_file_list = [file for file in MAP_DIR.iterdir() if file.suffix == MAP_FILE_SUFFIX]
+        self.map_filenames_iter = itertools.cycle(map_file_list)
 
         # Créer le joueur et initialiser les autres attributs, puis importer la map
         self.player = RondPlayer(0, 0)
